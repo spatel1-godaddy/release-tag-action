@@ -2,6 +2,10 @@ name: Cut Release Tag
 author: Hiroaki Kobayashi
 description: Automatically create tags from the VERSION file
 inputs:
+  force:
+    description: Replace an existing tag
+    required: false
+    default: false
   only_major_version:
     description: Use only major version
     required: false
