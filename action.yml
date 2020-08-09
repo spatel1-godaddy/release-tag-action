@@ -1,0 +1,21 @@
+name: Cut Release Tag
+author: Hiroaki Kobayashi
+description: Automatically create tags from the VERSION file
+inputs:
+  prefix:
+    description: Prefix for release tag
+    required: false
+    default: v
+  suffix:
+    description: Suffix for release tag
+    required: false
+    default: ''
+outputs:
+  tag:
+    description: Name for release tag
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  color: orange
+  icon: tag
