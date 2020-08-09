@@ -6,6 +6,10 @@ inputs:
     description: Replace an existing tag
     required: false
     default: false
+  message:
+    description: Tag message, __VERSION__ will replace its version number
+    required: false
+    default: release __VERSION__
   only_major_version:
     description: Use only major version
     required: false
