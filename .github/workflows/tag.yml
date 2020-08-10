@@ -1,0 +1,27 @@
+name: Tag
+
+on:
+  push:
+    branches:
+      - 'release/v*'
+
+jobs:
+  full:
+    name: Cut full version tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+      - uses: kobtea/release-tag-action@master
+  major:
+    name: Cut major version tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+      - uses: kobtea/release-tag-action@master
+        with:
+          force: true
+          only_major_version: true
