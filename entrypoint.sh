@@ -30,7 +30,7 @@ yumServer=${INPUT_USERNAME}'@'${INPUT_HOSTNAME}
 basePath="$yumServer:/home/spatel1/test"
 
 if [ $( git rev-parse --abbrev-ref HEAD )  = 'main' ]; then
-    sshpass -p ${INPUT_PASSWORD} scp -o StrictHostKeyChecking=accept-new /github/workspace/flask_actions-$(cat VERSION)-1.x86_64.rpm $basePath/
+    sshpass -p ${INPUT_PASSWORD} scp -o "StrictHostKeyChecking no" /github/workspace/flask_actions-$(cat VERSION)-1.x86_64.rpm $basePath/
 elif  [ $( git rev-parse --abbrev-ref HEAD )  = 'unstable' ]; then
-    sshpass -p ${INPUT_PASSWORD} scp -o StrictHostKeyChecking=accept-new /github/workspace/flask_actions-$(cat VERSION)-1.x86_64.rpm $basePath/
+    sshpass -p ${INPUT_PASSWORD} scp -o "StrictHostKeyChecking no" /github/workspace/flask_actions-$(cat VERSION)-1.x86_64.rpm $basePath/
 fi
