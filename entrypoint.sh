@@ -23,7 +23,7 @@ rpmdev-setuptree
 cp -r /github/workspace/* /root/rpmbuild/SOURCES/
 
 rpmbuild -bb  /github/workspace/config.spec
-cp /root/rpmbuild/RPMS/x86_64/*.rpm /github/workspace/
+cp /github/home/rpmbuild/RPMS/x86_64/*.rpm /github/workspace/
 
 # Upload RPM module to ssh server
 yumServer=${INPUT_USERNAME}'@'${INPUT_HOSTNAME}
