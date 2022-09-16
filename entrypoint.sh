@@ -18,8 +18,4 @@ else
     git ls-remote --exit-code --tags origin $version > /dev/null 2>&1 || (git tag -a $version -m "$message" && git push origin $version)
 fi
 
-# Build RPM module
-rpmdev-setuptree
-cp -r /github/workspace/* /root/rpmbuild/SOURCES/
-
-rpmbuild -bb  /github/workspace/config.spec
+echo "::set-output name=tag::$version"
